@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget
           const [
             Text
             (
-              "Born",
+              "Movie",
               style: TextStyle
               (
                 color: Colors.white,
@@ -43,10 +43,10 @@ class MyApp extends StatelessWidget
             ),
             Text
             (
-              "Hub",
+              "Space",
               style: TextStyle
               (
-                color: Colors.orange,
+                color: Colors.red,
               ),
             )
           ],
