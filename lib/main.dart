@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:tv_app/widgets/carousel.dart';
+import 'package:tv_app/widgets/masreciente.dart';
 import 'package:tv_app/widgets/masvisto.dart';
 void main()
 {
@@ -19,11 +21,6 @@ class MyApp extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    List<String> nombresPeliculas=["Chantilly Bridge", "Chop And Steele", "Cocaine Bear", "Deepest Breath", "Haunting In Venice", "Inside Man", "Left Behind Rise Of The Antichrist", "Legend Of The White Dragon", "Meg Two The Trench", "Night Of The Caregiver", "Satanic Hispanics", "Saw X", "Slotherhouse", "Sound Of The Police", "Two Eyes"];
-    List<String> carrucel=["Asteroid City", "Bama Rush", "Barbie", "Blue Beetle", "Dungeons And Dragons"];
-    List<String> urlsPeliculas=["chantilly_bridge.jpg", "chop_and_steele.jpg", "cocaine_bear.jpg", "deepest_breath.jpg", "haunting_in_venice_ver3.jpg", "inside_man.jpg", "left_behind_rise_of_the_antichrist.jpg", "legend_of_the_white_dragon.jpg", "meg_two_the_trench_ver21.jpg", "night_of_the_caregiver_ver2.jpg", "satanic_hispanics.jpg", "saw_x.jpg", "slotherhouse_ver2.jpg", "sound_of_the_police.jpg", "two_eyes.jpg"];
-    List<String> urlCarrucel=["carusel/asteroid_city_ver9.jpg", "carusel/bama_rush_ver2.jpg", "carusel/barbie_ver31.jpg", "carusel/blue_beetle_ver7.jpg", "carusel/dungeons_and_dragons_honor_among_thieves_ver23.jpg"];
-    
     return Scaffold
     (
       backgroundColor: Colors.black,
@@ -69,22 +66,7 @@ class MyApp extends StatelessWidget
                 (
                   children:
                   [
-                    CarouselSlider
-                    (
-                      items: urlCarrucel.map((item)=>Image.asset
-                        (
-                          "assets/$item",
-                          fit: BoxFit.cover,
-                        ),
-                      ).toList(),
-                      options: CarouselOptions
-                      (
-                        height: 260,
-                        viewportFraction: 1,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 5),
-                      )
-                    ),
+                    const MyCarousel(),
                     SizedBox//esto es el gradiente superior
                     (
                       height: 100,
@@ -153,66 +135,7 @@ class MyApp extends StatelessWidget
                 Container
                 (
                   height: 260,
-                  child: ListView.builder
-                  (
-                    itemCount: 10,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder:(context, index)
-                    {
-                      return Padding
-                      (
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: SizedBox
-                        (
-                          width: 150,
-                          child: Stack
-                          (
-                            children:
-                            [
-                              Image.asset('assets/${urlsPeliculas[index]}'),
-                              SizedBox
-                              (
-                                height: 260,
-                                child: Container
-                                (
-                                  decoration: const BoxDecoration
-                                  (
-                                    gradient: LinearGradient
-                                    (
-                                      begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter,
-                                      colors:
-                                      [
-                                        Colors.black,
-                                        Colors.transparent
-                                      ],
-                                      stops: [0.1, 0.6]
-                                    )
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                bottom: 40,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Text
-                                  (
-                                    nombresPeliculas[index],
-                                    textAlign: TextAlign.justify,
-                                    style: const TextStyle
-                                    (
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                        ),
-                      );
-                    }
-                  ),
+                  child:const MasRecienteList()//aqui va lo mas reciente
                 )
               ],
             ),

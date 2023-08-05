@@ -1,17 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:dpad_container/dpad_container.dart';
-class MasVistoList extends StatefulWidget
+import 'package:flutter/material.dart';
+class MasRecienteList extends StatefulWidget
 {
-  const MasVistoList({ Key? key }) : super(key: key);
+  const MasRecienteList({ Key? key }) : super(key: key);
   @override
-  State<MasVistoList> createState() => _MasVistoListState();
+  State<MasRecienteList> createState() => _MasRecienteListState();
 }
-class _MasVistoListState extends State<MasVistoList>
+class _MasRecienteListState extends State<MasRecienteList>
 {
   int? selectedIndex;
   int? onFocusIndex;
-  List<String> nombresPeliculas=["Acidman", "After The Bite", "Amber The Girl", "American Buffalo", "Angry Black Girl And Her Monster", "Aporia", "Barbie", "Blood", "Blue Beetle", "Bruiser"];
-  List<String> urlsPeliculas=["acidman.jpg", "after_the_bite.jpg", "amber_the_girl_behind_the_alert.jpg", "american_buffalo.jpg", "angry_black_girl_and_her_monster.jpg", "aporia.jpg", "barbie_ver2.jpg", "blood.jpg", "blue_beetle_ver4.jpg", "bruiser.jpg"];
+  List<String> nombresPeliculas=["Chantilly Bridge", "Chop And Steele", "Cocaine Bear", "Deepest Breath", "Haunting In Venice", "Inside Man", "Left Behind Rise Of The Antichrist", "Legend Of The White Dragon", "Meg Two The Trench", "Night Of The Caregiver", "Satanic Hispanics", "Saw X", "Slotherhouse", "Sound Of The Police", "Two Eyes"];
+  List<String> urlsPeliculas=["chantilly_bridge.jpg", "chop_and_steele.jpg", "cocaine_bear.jpg", "deepest_breath.jpg", "haunting_in_venice_ver3.jpg", "inside_man.jpg", "left_behind_rise_of_the_antichrist.jpg", "legend_of_the_white_dragon.jpg", "meg_two_the_trench_ver21.jpg", "night_of_the_caregiver_ver2.jpg", "satanic_hispanics.jpg", "saw_x.jpg", "slotherhouse_ver2.jpg", "sound_of_the_police.jpg", "two_eyes.jpg"];  
   @override
   Widget build(BuildContext context)
   {
